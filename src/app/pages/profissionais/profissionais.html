@@ -1,0 +1,42 @@
+<div class="min-h-screen flex items-center justify-center bg-zinc-950 text-white">
+  <div class="bg-zinc-900 p-6 rounded-xl w-full max-w-md space-y-4 shadow-xl">
+
+    <div>
+      <h1 class="text-xl font-semibold">Dra. Ana Pereira</h1>
+      <p class="text-sm text-zinc-400">Psicóloga Clínica</p>
+    </div>
+
+    <div>
+      <label class="text-sm text-zinc-300">Dia</label>
+      <select class="w-full mt-1 p-2 rounded bg-zinc-800">
+        <option>Segunda</option>
+        <option>Terça</option>
+        <option>Quarta</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="text-sm text-zinc-300">Horário</label>
+      <select class="w-full mt-1 p-2 rounded bg-zinc-800">
+        <option>09:00</option>
+        <option>14:00</option>
+        <option>18:00</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="text-sm text-zinc-300">Tipo de consulta</label>
+      <select class="w-full mt-1 p-2 rounded bg-zinc-800">
+        <option>Online</option>
+        <option>Presencial</option>
+      </select>
+    </div>
+
+    <button
+      (click)="irParaAgendamento()"
+      class="w-full bg-white text-black py-2 rounded hover:bg-zinc-200 transition">
+      Confirmar agendamento
+    </button>
+
+  </div>
+</div>

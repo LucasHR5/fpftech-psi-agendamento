@@ -1,0 +1,26 @@
+<div class="min-h-screen flex items-center justify-center bg-zinc-950 text-white">
+  <div class="bg-zinc-900 p-6 rounded-xl w-full max-w-md space-y-4 shadow-xl">
+
+    <h2 class="text-xl font-semibold">Seus dados</h2>
+
+    <input class="w-full p-2 rounded bg-zinc-800" placeholder="Nome completo">
+    <input class="w-full p-2 rounded bg-zinc-800" placeholder="Telefone">
+    <input class="w-full p-2 rounded bg-zinc-800" placeholder="CPF">
+
+    <label class="flex items-center gap-2 text-sm">
+      <input type="checkbox" class="accent-white">
+      Possui convênio?
+    </label>
+
+    <button
+      (click)="confirmar()"
+      class="w-full bg-white text-black py-2 rounded hover:bg-zinc-200 transition">
+      Confirmar agendamento
+    </button>
+
+    <p *ngIf="confirmado" class="text-green-400 text-sm text-center mt-2">
+      ✅ Agendamento confirmado com sucesso!
+    </p>
+
+  </div>
+</div>
