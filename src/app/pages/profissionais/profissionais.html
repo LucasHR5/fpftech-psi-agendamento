@@ -1,75 +1,109 @@
-<div class="min-h-screen bg-zinc-950 text-white flex items-center justify-center p-4">
-  <div class="bg-zinc-900 rounded-xl w-full max-w-md p-4 shadow-xl">
-    
-    <h1 class="text-xl font-semibold mb-4">Escolha um profissional</h1>
+<div class="min-h-screen bg-zinc-950 text-white">
+  
+<header class="border-b border-zinc-800 bg-zinc-950">
+  <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
 
-    <!-- Área com scroll -->
-    <div class="max-h-[500px] overflow-y-auto space-y-3 pr-2">
+    <h1 class="font-semibold text-lg">
+      MindHub
+    </h1>
 
-      <!-- Card 1 -->
-      <div class="bg-zinc-800 rounded-lg p-4 flex justify-between items-center">
-        <div>
-          <h2 class="font-semibold">Dra. Ana Pereira</h2>
-          <p class="text-xs text-zinc-400">Psicóloga Clínica</p>
-          <p class="text-sm mt-1">Seg, Qua e Sex</p>
-          <p class="text-sm text-zinc-400">09:00 • 14:00 • 18:00</p>
+    <nav class="flex gap-6 text-sm text-zinc-400">
+
+      <a routerLink="/profissionais" class="hover:text-white transition">
+        Profissionais
+      </a>
+
+      <a routerLink="/agendamento" class="hover:text-white transition">
+        Horários
+      </a>
+
+      <a class="hover:text-white transition cursor-pointer">
+        Sobre
+      </a>
+
+    </nav>
+
+  </div>
+</header>
+
+  <!-- Conteúdo -->
+  <main class="flex justify-center p-6">
+
+    <div class="w-full max-w-2xl">
+
+      <h2 class="text-2xl font-bold mb-6 text-center">
+        Escolha um profissional
+      </h2>
+
+      <!-- Lista -->
+      <div class="space-y-4">
+
+        <!-- Card -->
+        <div class="bg-zinc-900 hover:bg-zinc-800 transition rounded-xl p-5 flex justify-between items-center shadow-lg">
+
+          <div>
+            <h3 class="font-semibold text-lg">Dra. Ana Pereira</h3>
+            <p class="text-sm text-zinc-400">Psicóloga Clínica</p>
+
+            <div class="mt-2 text-sm">
+              <p>Seg, Qua e Sex</p>
+              <p class="text-zinc-400">09:00 • 14:00 • 18:00</p>
+            </div>
+          </div>
+
+          <button
+            (click)="irParaAgendamento()"
+            class="bg-indigo-500 hover:bg-indigo-600 text-white text-sm px-4 py-2 rounded-lg font-medium transition">
+            Agendar
+          </button>
+
         </div>
 
-        <button
-          (click)="irParaAgendamento()"
-          class="bg-white text-black text-xs px-3 py-1 rounded hover:bg-zinc-200 transition">
-          Agendar
-        </button>
-      </div>
+        <!-- Card -->
+        <div class="bg-zinc-900 hover:bg-zinc-800 transition rounded-xl p-5 flex justify-between items-center shadow-lg">
 
-      <!-- Card 2 -->
-      <div class="bg-zinc-800 rounded-lg p-4 flex justify-between items-center">
-        <div>
-          <h2 class="font-semibold">Dr. Lucas Martins</h2>
-          <p class="text-xs text-zinc-400">Psicólogo Infantil</p>
-          <p class="text-sm mt-1">Ter e Qui</p>
-          <p class="text-sm text-zinc-400">10:00 • 15:00</p>
+          <div>
+            <h3 class="font-semibold text-lg">Dr. Lucas Martins</h3>
+            <p class="text-sm text-zinc-400">Psicólogo Infantil</p>
+
+            <div class="mt-2 text-sm">
+              <p>Ter e Qui</p>
+              <p class="text-zinc-400">10:00 • 15:00</p>
+            </div>
+          </div>
+
+          <button
+            (click)="irParaAgendamento()"
+            class="bg-indigo-500 hover:bg-indigo-600 text-white text-sm px-4 py-2 rounded-lg font-medium transition">
+            Agendar
+          </button>
+
         </div>
 
-        <button
-          (click)="irParaAgendamento()"
-          class="bg-white text-black text-xs px-3 py-1 rounded hover:bg-zinc-200 transition">
-          Agendar
-        </button>
-      </div>
+        <!-- Card -->
+        <div class="bg-zinc-900 hover:bg-zinc-800 transition rounded-xl p-5 flex justify-between items-center shadow-lg">
 
-      <!-- Card 3 -->
-      <div class="bg-zinc-800 rounded-lg p-4 flex justify-between items-center">
-        <div>
-          <h2 class="font-semibold">Dra. Renata Souza</h2>
-          <p class="text-xs text-zinc-400">Terapia Cognitivo-Comportamental</p>
-          <p class="text-sm mt-1">Seg a Sex</p>
-          <p class="text-sm text-zinc-400">08:00 • 13:00 • 17:00</p>
+          <div>
+            <h3 class="font-semibold text-lg">Dra. Renata Souza</h3>
+            <p class="text-sm text-zinc-400">TCC</p>
+
+            <div class="mt-2 text-sm">
+              <p>Seg a Sex</p>
+              <p class="text-zinc-400">08:00 • 13:00 • 17:00</p>
+            </div>
+          </div>
+
+          <button
+            (click)="irParaAgendamento()"
+            class="bg-indigo-500 hover:bg-indigo-600 text-white text-sm px-4 py-2 rounded-lg font-medium transition">
+            Agendar
+          </button>
+
         </div>
 
-        <button
-          (click)="irParaAgendamento()"
-          class="bg-white text-black text-xs px-3 py-1 rounded hover:bg-zinc-200 transition">
-          Agendar
-        </button>
-      </div>
-
-      <!-- Card 4 (extra pra forçar scroll) -->
-      <div class="bg-zinc-800 rounded-lg p-4 flex justify-between items-center">
-        <div>
-          <h2 class="font-semibold">Dr. Felipe Andrade</h2>
-          <p class="text-xs text-zinc-400">Psicologia Organizacional</p>
-          <p class="text-sm mt-1">Qua e Sex</p>
-          <p class="text-sm text-zinc-400">11:00 • 16:00</p>
-        </div>
-
-        <button
-          (click)="irParaAgendamento()"
-          class="bg-white text-black text-xs px-3 py-1 rounded hover:bg-zinc-200 transition">
-          Agendar
-        </button>
       </div>
 
     </div>
-  </div>
+
+  </main>
 </div>
