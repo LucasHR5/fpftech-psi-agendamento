@@ -1,0 +1,169 @@
+/* RESET GLOBAL (remove faixa branca do topo) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    /* remove margem branca padrão */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ================= PAGE ================= */
+
+.page {
+    min-height: 100vh;
+    position: relative;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 60px;
+    background: transparent;
+    background-color: #344730;
+    background-color: rgba(52, 71, 48, 0.3);
+    z-index: 10;
+}
+
+.header-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.logo {
+    display: none;
+    /* igual ao layout da imagem */
+}
+
+.header-nav {
+    display: flex;
+    gap: 40px;
+    font-size: 16px;
+}
+
+.header-nav a {
+    color: #e6e6e2;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.header-nav a:hover {
+    opacity: 0.7;
+}
+
+/* ================= MAIN ================= */
+
+.main {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Lado esquerdo */
+.left-side {
+    flex: 1;
+    background-image: url("./assets/clinica.png");
+    /* caminho da sua imagem */
+    background-size: cover;
+    /* cobre toda a área */
+    background-position: center;
+    /* centraliza */
+    background-repeat: no-repeat;
+
+
+}
+
+/* Lado direito */
+.right-side {
+    flex: 1;
+    background-color: #3d4c3a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
+    /* espaço para o header */
+}
+
+/* ================= CONTEÚDO ================= */
+.content {
+    width: 100%;
+    max-width: 520px;
+}
+
+.title {
+    color: #faf2e9;
+    margin-left: 135px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+/* ================= CARDS ================= */
+
+.card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* AGORA TEM ESPAÇAMENTO  */
+}
+
+.card {
+    background-color: #e6e6e2;
+    color: #2f3e2c;
+    padding: 16px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.subtitle {
+    margin: 4px 0;
+}
+
+.schedule {
+    margin-top: 6px;
+}
+
+.time {
+    margin-top: 4px;
+}
+
+.card button {
+    background-color: #cfd5c8;
+    color: #2f3e2c;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.card button:hover {
+    background-color: #bcc3b5;
+}

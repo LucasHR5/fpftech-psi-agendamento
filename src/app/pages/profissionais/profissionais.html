@@ -1,104 +1,108 @@
-<div class="min-h-screen bg-zinc-950 text-white">
-  
-<header class="border-b border-zinc-800 bg-zinc-950">
-  <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+<div class="page">
 
-    <h1 class="font-semibold text-lg">
-      MindHub
-    </h1>
+  <!-- HEADER (como estava, fora do main) -->
+  <header class="header">
+    <div class="header-container">
 
-    <nav class="flex gap-6 text-sm text-zinc-400">
+      <h1 class="logo">
+        MindHub
+      </h1>
 
-      <a routerLink="/profissionais" class="hover:text-white transition">
-        Profissionais
-      </a>
+      <nav class="header-nav">
+        <a routerLink="/profissionais">PROFISSIONAIS</a>
+        <a>SOBRE</a>
+      </nav>
 
-      <a routerLink="/agendamento" class="hover:text-white transition">
-        Horários
-      </a>
+    </div>
+  </header>
 
-      <a class="hover:text-white transition cursor-pointer">
-        Sobre
-      </a>
+  <!-- MAIN -->
+  <main class="main">
 
-    </nav>
+    <!-- LADO ESQUERDO (IMAGEM) -->
+    <div class="left-side">
+      <!-- Coloque sua imagem aqui depois se quiser -->
+      <!-- Exemplo:
+      <img src="assets/clinica.jpg" alt="Clínica">
+      -->
+    </div>
 
-  </div>
-</header>
+    <!-- LADO DIREITO (PROFISSIONAIS) -->
+    <div class="right-side">
 
-  <!-- Conteúdo -->
-  <main class="flex justify-center p-6">
+      <div class="content">
 
-    <div class="w-full max-w-2xl">
+        <h2 class="title">
+          PROFISSIONAIS DISPONÍVEIS
+        </h2>
 
-      <h2 class="text-2xl font-bold mb-6 text-center">
-        Escolha um profissional
-      </h2>
+        <div class="card-list">
 
-      <!-- Lista -->
-      <div class="space-y-4">
+          <!-- Card 1 -->
+          <div class="card">
+            <div>
+              <h3>Dra. Ana Pereira</h3>
+              <p class="subtitle">Psicóloga Clínica</p>
 
-        <!-- Card -->
-        <div class="bg-zinc-900 hover:bg-zinc-800 transition rounded-xl p-5 flex justify-between items-center shadow-lg">
-
-          <div>
-            <h3 class="font-semibold text-lg">Dra. Ana Pereira</h3>
-            <p class="text-sm text-zinc-400">Psicóloga Clínica</p>
-
-            <div class="mt-2 text-sm">
-              <p>Seg, Qua e Sex</p>
-              <p class="text-zinc-400">09:00 • 14:00 • 18:00</p>
+              <div class="schedule">
+                <p>Seg, Qua e Sex</p>
+                <p class="time">09:00 • 14:00 • 18:00</p>
+              </div>
             </div>
+
+            <button (click)="irParaAgendamento()">
+              Agendar
+            </button>
           </div>
 
-          <button
-            (click)="irParaAgendamento()"
-            class="bg-indigo-500 hover:bg-indigo-600 text-white text-sm px-4 py-2 rounded-lg font-medium transition">
-            Agendar
-          </button>
+          <!-- Card 2 -->
+          <div class="card">
+            <div>
+              <h3>Dr. Lucas Martins</h3>
+              <p class="subtitle">Psicólogo Infantil</p>
 
-        </div>
-
-        <!-- Card -->
-        <div class="bg-zinc-900 hover:bg-zinc-800 transition rounded-xl p-5 flex justify-between items-center shadow-lg">
-
-          <div>
-            <h3 class="font-semibold text-lg">Dr. Lucas Martins</h3>
-            <p class="text-sm text-zinc-400">Psicólogo Infantil</p>
-
-            <div class="mt-2 text-sm">
-              <p>Ter e Qui</p>
-              <p class="text-zinc-400">10:00 • 15:00</p>
+              <div class="schedule">
+                <p>Ter e Qui</p>
+                <p class="time">10:00 • 15:00</p>
+              </div>
             </div>
+
+            <button (click)="irParaAgendamento()">
+              Agendar
+            </button>
           </div>
 
-          <button
-            (click)="irParaAgendamento()"
-            class="bg-indigo-500 hover:bg-indigo-600 text-white text-sm px-4 py-2 rounded-lg font-medium transition">
-            Agendar
-          </button>
+          <!-- Card 3 -->
+          <div class="card">
+            <div>
+              <h3>Dra. Renata Souza</h3>
+              <p class="subtitle">TCC</p>
 
-        </div>
-
-        <!-- Card -->
-        <div class="bg-zinc-900 hover:bg-zinc-800 transition rounded-xl p-5 flex justify-between items-center shadow-lg">
-
-          <div>
-            <h3 class="font-semibold text-lg">Dra. Renata Souza</h3>
-            <p class="text-sm text-zinc-400">TCC</p>
-
-            <div class="mt-2 text-sm">
-              <p>Seg a Sex</p>
-              <p class="text-zinc-400">08:00 • 13:00 • 17:00</p>
+              <div class="schedule">
+                <p>Seg a Sex</p>
+                <p class="time">08:00 • 13:00 • 17:00</p>
+              </div>
             </div>
+
+            <button (click)="irParaAgendamento()">
+              Agendar
+            </button>
           </div>
+          <!-- Card 4 -->
+          <div class="card">
+            <div>
+              <h3>Dra. Marco Alexandre</h3>
+              <p class="subtitle">TCC</p>
 
-          <button
-            (click)="irParaAgendamento()"
-            class="bg-indigo-500 hover:bg-indigo-600 text-white text-sm px-4 py-2 rounded-lg font-medium transition">
-            Agendar
-          </button>
-
+              <div class="schedule">
+                <p>Seg a Sex</p>
+                <p class="time">08:00 • 13:00 • 17:00</p>
+              </div>
+            </div>
+            <button (click)="irParaAgendamento()">
+              Agendar
+            </button>
+          </div>
         </div>
 
       </div>
@@ -106,4 +110,5 @@
     </div>
 
   </main>
+
 </div>
