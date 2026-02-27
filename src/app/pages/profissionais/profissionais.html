@@ -1,114 +1,56 @@
 <div class="page">
 
-  <!-- HEADER (como estava, fora do main) -->
   <header class="header">
     <div class="header-container">
-
-      <h1 class="logo">
-        MindHub
-      </h1>
-
+      <h1 class="logo">MindHub</h1>
       <nav class="header-nav">
         <a routerLink="/profissionais">PROFISSIONAIS</a>
         <a>SOBRE</a>
       </nav>
-
     </div>
   </header>
 
-  <!-- MAIN -->
   <main class="main">
+    <div class="left-side"></div>
 
-    <!-- LADO ESQUERDO (IMAGEM) -->
-    <div class="left-side">
-      <!-- Coloque sua imagem aqui depois se quiser -->
-      <!-- Exemplo:
-      <img src="assets/clinica.jpg" alt="Clínica">
-      -->
-    </div>
-
-    <!-- LADO DIREITO (PROFISSIONAIS) -->
     <div class="right-side">
-
       <div class="content">
 
-        <h2 class="title">
-          PROFISSIONAIS DISPONÍVEIS
-        </h2>
+        <h2 class="title">PROFISSIONAIS DISPONÍVEIS</h2>
+
+        <!-- DEBUG -->
+        <p style="color: white">Total: {{ profissionais.length }}</p>
 
         <div class="card-list">
 
-          <!-- Card 1 -->
-          <div class="card">
+          <div class="card" *ngFor="let profissional of profissionais">
             <div>
-              <h3>Dra. Ana Pereira</h3>
-              <p class="subtitle">Psicóloga Clínica</p>
+              <h3>{{ profissional.name }}</h3>
+              <p class="subtitle">{{ profissional.specialty }}</p>
 
               <div class="schedule">
-                <p>Seg, Qua e Sex</p>
-                <p class="time">09:00 • 14:00 • 18:00</p>
+                <p>
+                  <span *ngIf="profissional.is_presencial">Atende presencial</span>
+                  <span *ngIf="profissional.is_online"> • Atende online</span>
+                </p>
+
+                <p class="time">
+                  CRP: {{ profissional.crp }}
+                </p>
               </div>
             </div>
 
-            <button (click)="irParaAgendamento()">
+            <button (click)="irParaAgendamento(profissional.id)">
               Agendar
             </button>
           </div>
 
-          <!-- Card 2 -->
-          <div class="card">
-            <div>
-              <h3>Dr. Lucas Martins</h3>
-              <p class="subtitle">Psicólogo Infantil</p>
+          <p *ngIf="profissionais.length === 0">Nenhum profissional disponível.</p>  
 
-              <div class="schedule">
-                <p>Ter e Qui</p>
-                <p class="time">10:00 • 15:00</p>
-              </div>
-            </div>
-
-            <button (click)="irParaAgendamento()">
-              Agendar
-            </button>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="card">
-            <div>
-              <h3>Dra. Renata Souza</h3>
-              <p class="subtitle">TCC</p>
-
-              <div class="schedule">
-                <p>Seg a Sex</p>
-                <p class="time">08:00 • 13:00 • 17:00</p>
-              </div>
-            </div>
-
-            <button (click)="irParaAgendamento()">
-              Agendar
-            </button>
-          </div>
-          <!-- Card 4 -->
-          <div class="card">
-            <div>
-              <h3>Dra. Marco Alexandre</h3>
-              <p class="subtitle">TCC</p>
-
-              <div class="schedule">
-                <p>Seg a Sex</p>
-                <p class="time">08:00 • 13:00 • 17:00</p>
-              </div>
-            </div>
-            <button (click)="irParaAgendamento()">
-              Agendar
-            </button>
-          </div>
         </div>
 
       </div>
-
     </div>
-
   </main>
 
 </div>
