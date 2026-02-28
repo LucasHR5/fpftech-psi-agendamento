@@ -1,0 +1,33 @@
+<h2 class="title">PROFISSIONAIS DISPONÍVEIS</h2>
+
+<p style="color: white">Total: {{ profissionais.length }}</p>
+
+<div class="card-list">
+
+  <div class="card" *ngFor="let profissional of profissionais">
+    <div>
+      <h3>{{ profissional.name }}</h3>
+      <p class="subtitle">{{ profissional.specialty }}</p>
+
+      <div class="schedule">
+        <p>
+          <span *ngIf="profissional.is_presencial">Atende presencial</span>
+          <span *ngIf="profissional.is_online"> • Atende online</span>
+        </p>
+
+        <p class="time">
+          CRP: {{ profissional.crp }}
+        </p>
+      </div>
+    </div>
+
+    <button (click)="irParaAgendamento(profissional.id)">
+      Agendar
+    </button>
+  </div>
+
+  <p *ngIf="profissionais.length === 0">
+    Nenhum profissional disponível.
+  </p>
+
+</div>
