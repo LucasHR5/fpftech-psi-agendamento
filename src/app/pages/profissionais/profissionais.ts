@@ -1,38 +1,26 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { ProfissionaisService } from '../../services/profissionais-service';
-import { Psicologo } from '../../interface/profissionais';
 
 @Component({
   selector: 'app-profissionais',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterOutlet],
   templateUrl: './profissionais.html',
   styleUrls: ['./profissionais.css']
 })
-export class ProfissionaisComponent implements OnInit {
+export class ProfissionaisComponent {
 
-  profissionais: Psicologo[] = [];
+  constructor(public router: Router) {}
 
-  constructor(
-    private router: Router,
-    private profissionaisService: ProfissionaisService,
-    private cd: ChangeDetectorRef
-  ) {}
-
-  ngOnInit() {
-    this.profissionaisService.listar().subscribe({
-      next: (res: Psicologo[]) => {
-        this.profissionais = res;
-        console.log('Profissionais recebidos:', this.profissionais);
-        this.cd.detectChanges(); // força Angular a atualizar o template
-      },
-      error: (err) => console.error('Erro ao buscar profissionais', err)
-    });
+  // Método já existente
+  isAgendamento(): boolean {
+    return this.router.url.includes('agendar');
   }
 
-  irParaAgendamento(id: number) {
+  // ✅ Novo método para redirecionar
+  irParaAgendamento(id: number | string): void {
     this.router.navigate(['/agendar', id]);
   }
+
 }

@@ -1,26 +1,36 @@
-<div class="min-h-screen flex items-center justify-center bg-zinc-950 text-white">
-  <div class="bg-zinc-900 p-6 rounded-xl w-full max-w-md space-y-4 shadow-xl">
+<h2 class="title">NOVO AGENDAMENTO</h2>
 
-    <h2 class="text-xl font-semibold">Seus dados</h2>
+<div class="form-container">
 
-    <input class="w-full p-2 rounded bg-zinc-800" placeholder="Nome completo">
-    <input class="w-full p-2 rounded bg-zinc-800" placeholder="Telefone">
-    <input class="w-full p-2 rounded bg-zinc-800" placeholder="CPF">
+  <label>Cliente</label>
+  <select [(ngModel)]="clienteId" name="cliente">
+    <option [ngValue]="null">Selecione</option>
+    <option *ngFor="let cliente of clientes" [ngValue]="cliente.id">
+      {{ cliente.name }}
+    </option>
+  </select>
 
-    <label class="flex items-center gap-2 text-sm">
-      <input type="checkbox" class="accent-white">
-      Possui convênio?
-    </label>
+  <label>Disponibilidade</label>
+  <select [(ngModel)]="disponibilidadeSelecionada" name="disponibilidade">
+    <option [ngValue]="null">Selecione</option>
+    <option *ngFor="let disp of disponibilidades" [ngValue]="disp.id">
+      {{ disp.day_of_week }} - {{ disp.hour }}
+    </option>
+  </select>
 
-    <button
-      (click)="confirmar()"
-      class="w-full bg-white text-black py-2 rounded hover:bg-zinc-200 transition">
-      Confirmar agendamento
-    </button>
+  <label>Tipo de Consulta</label>
+  <select [(ngModel)]="tipoConsulta" name="tipo">
+    <option value="online">Online</option>
+    <option value="presencial">Presencial</option>
+  </select>
 
-    <p *ngIf="confirmado" class="text-green-400 text-sm text-center mt-2">
-      ✅ Agendamento confirmado com sucesso!
-    </p>
+  <label>
+    <input type="checkbox" [(ngModel)]="confirmado" name="confirmado">
+    Confirmado
+  </label>
 
-  </div>
+  <button (click)="confirmarAgendamento()">
+    Confirmar
+  </button>
+
 </div>
